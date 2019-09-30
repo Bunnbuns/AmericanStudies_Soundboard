@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="fav/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="fav/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="fav/favicon-16x16.png">
+        <link rel="manifest" href="fav/site.webmanifest">
+        
+    	<title>AmericanStudies Soundboard</title>
+     
+    	<!-- CSS -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    	<style>
+    	   @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+            *{
+                font-family: 'Roboto', sans-serif;
+                outline:none;
+            }
+            .logo{
+                max-height:150px;
+                max-width: 100%
+            }
+            .btn{
+                padding:25px;
+                margin-bottom: 4px;
+                border-radius: 5px;
+                font-size: 1rem
+            }
+            .btn:focus{
+                background-color:#cfdaff;
+            }
+            .stop-btn{
+                display: block;
+                position: absolute;
+                bottom:0;
+                height: 80px;
+                margin: 0 -8px;
+                width: 100vw
+            }
+            .stop-btn i{
+                font-size: 2rem;
+            }
+    	</style>
+     
+    </head>
+    <body>
+        <center>
+            
+            <img class="logo" src="as_400x400.jpg">
+            
+            <h1>AmericanStudies Soundboard</h1>
+            
+            <div>
+                <p>Main</p>
+                <button class="btn" onclick="play(1)">Refresh</button>
+                <br>
+                <button class="btn" onclick="play(2)">Rolling</button>
+                <button class="btn" onclick="play(3)">Roll Out</button>
+                <p>Extra</p>
+                <button class="btn" onclick="play(4)">Donald Trump: Wrong</button>
+                <button class="btn" onclick="play(5)">T.M.o.L</button>
+            </div>
+            
+            <br><br>
+            
+            <div style="display: none">
+                <audio controls id="sound-1" src="sounds/Refresh.mp3"></audio>
+                <audio controls id="sound-2" src="sounds/Rolling.mp3"></audio>
+                <audio controls id="sound-3" src="sounds/Roll-Out.mp3"></audio>
+                <audio controls id="sound-4" src="sounds/Donald-Trump-Wrong.wav"></audio>
+                <audio controls id="sound-5" src="sounds/T.M.o.L.mp3"></audio>
+            </div>
+            
+            <div>
+                <button class="stop-btn" onclick="stopAll()" title="Stop All"><i class="material-icons"> stop </i></button>
+            </div>
+            
+        </center>
+        
+        <script>
+            function play(num){
+                id = document.getElementById("sound-"+num);
+                id.load();
+                id.play();
+            }
+            function stopAll() {
+              var sounds = document.getElementsByTagName('audio');
+              for(i=0; i<sounds.length; i++) sounds[i].load();
+            };
+        </script>
+    </body>
+</html>
