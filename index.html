@@ -32,21 +32,26 @@
                 padding:25px;
                 margin-bottom: 4px;
                 border-radius: 5px;
-                font-size: 1rem
+                font-size: 1rem;
             }
             .btn:focus{
                 background-color:#cfdaff;
             }
             .stop-btn{
                 display: block;
-                position: absolute;
+                position: fixed;
                 bottom:0;
                 height: 80px;
                 margin: 0 -8px;
-                width: 100vw
+                width: 100vw;
+                border-radius: 0
             }
             .stop-btn i{
                 font-size: 2rem;
+            }
+            .board{
+                min-height: 75vh;
+                overflow: scroll
             }
     	</style>
      
@@ -58,7 +63,7 @@
             
             <h1>AmericanStudies Soundboard</h1>
             
-            <div>
+            <div class="board">
                 <p></p>
                 <button class="btn" onclick="play(1)">Refresh</button>
                 <br>
