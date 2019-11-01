@@ -22,6 +22,7 @@
         <link rel="prefetch" href="sounds/Donald-Trump-Wrong.wav">
         <link rel="prefetch" href="sounds/Roll-Out.mp3">
         <link rel="prefetch" href="sounds/T.M.o.L.mp3">
+        <link rel="prefetch" href="sounds/We-Talkin-About-Practice.mp3">
      
     	<!-- CSS -->
         
@@ -38,8 +39,8 @@
                 max-width: 100%
             }
             .btn{
-                padding:25px;
-                margin-bottom: 4px;
+                padding:20px 25px;
+                margin: 0 4px 8px 4px;
                 border-radius: 5px;
                 font-size: 1rem;
             }
@@ -60,6 +61,7 @@
             }
             .board{
                 min-height: 69vh;
+                max-width: 500px;
                 overflow: scroll
             }
     	</style>
@@ -81,6 +83,7 @@
                 <p>Extra</p>
                 <button class="btn" onclick="play(4)">Donald Trump: Wrong</button>
                 <button class="btn" onclick="play(5)">T.M.o.L</button>
+                <button class="btn" onclick="play(6)">We Talkin About Practice</button>
             </div>
             
             <br><br>
@@ -91,6 +94,7 @@
                 <audio controls id="sound-3" src="sounds/Roll-Out.mp3"></audio>
                 <audio controls id="sound-4" src="sounds/Donald-Trump-Wrong.wav"></audio>
                 <audio controls id="sound-5" src="sounds/T.M.o.L.mp3"></audio>
+                <audio controls id="sound-6" src="sounds/We-Talkin-About-Practice.mp3"></audio>
             </div>
             
             <div>
