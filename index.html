@@ -23,6 +23,7 @@
         <link rel="prefetch" href="sounds/Roll-Out.mp3">
         <link rel="prefetch" href="sounds/T.M.o.L.mp3">
         <link rel="prefetch" href="sounds/We-Talkin-About-Practice.mp3">
+        <link rel="prefetch" href="sounds/OOF.mp3">
      
     	<!-- CSS -->
         
@@ -41,7 +42,7 @@
                 margin-bottom: .5rem;
             }
             .logo{
-                max-height:90px;
+                max-height:95px;
                 max-width: 100%
             }
             .btn{
@@ -74,6 +75,14 @@
                 max-width: 500px;
                 overflow: scroll
             }
+            #more-link{
+                color:gray;
+                text-decoration: none;
+                cursor: pointer;
+            }
+            #moreSounds{
+                margin-top: .5rem;
+            }
     	</style>
      
     </head>
@@ -95,7 +104,12 @@
                 <button class="btn" onclick="play(5)">T.M.o.L</button>
                 <button class="btn" onclick="play(6)">We Talkin About Practice</button>
                 <br>
-            </div>
+                <br>
+                <a id="more-link" onclick="moreSounds()">More<i class="material-icons vam"> keyboard_arrow_down</i></a>
+                <div id="moreSounds" style="display: none;">
+                    <button class="btn" onclick="play(7)">Oof</button>
+                </div>
+            </div><!-- / board -->
             
             <br><br><br><br>
             
@@ -106,6 +120,7 @@
                 <audio controls id="sound-4" src="sounds/Donald-Trump-Wrong.wav"></audio>
                 <audio controls id="sound-5" src="sounds/T.M.o.L.mp3"></audio>
                 <audio controls id="sound-6" src="sounds/We-Talkin-About-Practice.mp3"></audio>
+                <audio controls id="sound-7" src="sounds/OOF.mp3"></audio>
             </div>
             
             <div>
@@ -124,6 +139,18 @@
               var sounds = document.getElementsByTagName('audio');
               for(i=0; i<sounds.length; i++) sounds[i].load();
             };
+            var moreSoundsState = 0;
+            function moreSounds(){
+                if(moreSoundsState == 0){
+                    moreSoundsState = 1;
+                    document.getElementById("more-link").innerHTML = 'Less<i class="material-icons vam"> keyboard_arrow_up</i>';
+                    document.getElementById("moreSounds").style.display = "block";
+                }else{
+                    moreSoundsState = 0;
+                    document.getElementById("more-link").innerHTML = 'More<i class="material-icons vam"> keyboard_arrow_down</i>';
+                    document.getElementById("moreSounds").style.display = "none";
+                }
+            }
         </script>
     </body>
 </html>
