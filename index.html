@@ -170,7 +170,10 @@
             }
             function earRapeAll(){
                 var sounds = document.getElementsByTagName('audio');
-                for(i=0; i<sounds.length; i++) sounds[i].play();
+                for(i=0; i<sounds.length; i++){
+                    sounds[i].load();
+                    sounds[i].play();
+                } 
             }
         </script>
     </body>
