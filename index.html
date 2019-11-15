@@ -46,6 +46,9 @@
                 max-height:95px;
                 max-width: 100%
             }
+            #moreSounds{
+                padding: 0 0 2.25rem 0;
+            }
             .btn{
                 padding:20px 25px;
                 margin: 0 4px 8px 4px;
@@ -54,6 +57,12 @@
             }
             .btn:focus{
                 background-color:#cfdaff;
+            }
+            .btn.small{
+                padding:8px 10px;
+                margin: 0 4px 8px 4px;
+                border-radius: 5px;
+                font-size: 1rem;
             }
             .stop-btn{
                 display: block;
@@ -104,18 +113,23 @@
                 <button class="btn" onclick="play(4)">Donald Trump: Wrong</button>
                 <button class="btn" onclick="play(5)">T.M.o.L</button>
                 <button class="btn" onclick="play(6)">We Talkin About Practice</button>
+                
                 <br>
                 <br>
+                
                 <a id="more-link" onclick="moreSounds()">More<i class="material-icons vam"> keyboard_arrow_down</i></a>
                 <div id="moreSounds" style="display: none;">
                     <button class="btn" onclick="play(7)">Oof</button>
                     <button class="btn" onclick="play(8)">Bruh</button>
+                    <br>
+                    <button class="btn small" onclick="earRapeAll()">Ear rape (ALL)</button>
                 </div>
+                
             </div><!-- / board -->
             
-            <br><br><br><br>
+            <br><br><br>
             
-            <div style="display: none">
+            <div style="display: none; padding: 0 0 5rem 0">
                 <audio controls id="sound-1" src="sounds/Refresh.mp3"></audio>
                 <audio controls id="sound-2" src="sounds/Rolling.mp3"></audio>
                 <audio controls id="sound-3" src="sounds/Roll-Out.mp3"></audio>
@@ -153,6 +167,10 @@
                     document.getElementById("more-link").innerHTML = 'More<i class="material-icons vam"> keyboard_arrow_down</i>';
                     document.getElementById("moreSounds").style.display = "none";
                 }
+            }
+            function earRapeAll(){
+                var sounds = document.getElementsByTagName('audio');
+                for(i=0; i<sounds.length; i++) sounds[i].play();
             }
         </script>
     </body>
