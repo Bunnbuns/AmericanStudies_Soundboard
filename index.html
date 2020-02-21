@@ -121,13 +121,13 @@
                 display: block;
                 position: fixed;
                 bottom:0;
-                margin: 0 -8px;
-                width: 100vw;
-                border-radius: none;
+                width: 100%;
+                overflow: hidden;
                 cursor: pointer;
                 color: #a32b2b;
                 background-color: #fdbebe;
                 padding: 1.25rem 0;
+                box-shadow: 0 4px 4px rgba(0,0,0,.45);
             }
             .stop-btn:active{
                 background-color: #fab4b4;
@@ -220,7 +220,6 @@
             </div>
             
         </center>
-        <br>
         <script>
             function play(num){
                 id = document.getElementById("sound-"+num);
