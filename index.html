@@ -270,13 +270,21 @@
             
         </center>
         <script>
-            var btns = document.getElementsByClassName('button');
+            function $(id){  //less typing
+                if(id.startsWith(".")){
+                    return document.getElementsByClassName(id.substring(1));
+                }else{
+                    return document.getElementById(id);
+                }
+            }
+            /* fixes buttons not focusing */
+            var btns = $('.button');
             for (var i = 0, len = btns.length; i < len; i++){
                 btns[i].setAttribute('tabindex', '0');
             }
             /* when a btn is clicked, this will be called */
             function play(num){
-                id = document.getElementById("sound-"+num);
+                id = $("sound-"+num);
                 id.load();
                 id.play();
             }
@@ -292,12 +300,12 @@
             function moreSounds(){
                 if(moreSoundsState == 0){
                     moreSoundsState = 1;
-                    document.getElementById("more-link").innerHTML = 'Less<i class="material-icons vam"> keyboard_arrow_up</i>';
-                    document.getElementById("moreSounds").style.display = "block";
+                    $("more-link").innerHTML = 'Less<i class="material-icons vam"> keyboard_arrow_up</i>';
+                    $("moreSounds").style.display = "block";
                 }else{
                     moreSoundsState = 0;
-                    document.getElementById("more-link").innerHTML = 'More<i class="material-icons vam"> keyboard_arrow_down</i>';
-                    document.getElementById("moreSounds").style.display = "none";
+                    $("more-link").innerHTML = 'More<i class="material-icons vam"> keyboard_arrow_down</i>';
+                    $("moreSounds").style.display = "none";
                 }
             }
             
