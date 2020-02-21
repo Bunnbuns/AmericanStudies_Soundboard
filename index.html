@@ -38,20 +38,66 @@
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         
     	<style>
-    	   @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
             *{
-                font-family: 'Roboto', sans-serif;
+                font-family: IBMPlexSans, Helvetica Neue, Segoe UI, Helvetica, Verdana, Arial, sans-serif;
+                -webkit-font-smoothing: antialiased;
                 outline:none;
+            }
+            body{
+                margin: 0;
+                padding: 0;
+                font-size: 14px;
+                font-weight: 400;
+                color: #333;
+                background-color: #f5f5f5;
+            }
+            *, :after, :before {
+                -moz-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+            img{
+                max-width: 100%;
+                border: none;
+            }
+            hr, img {
+                border: 0;
             }
             .vam{
                 vertical-align: middle;
             }
-            .title{
-                margin-bottom: .5rem;
+            .noselect {
+                -webkit-touch-callout: none;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
             }
-            .logo{
-                max-height:95px;
-                max-width: 100%;
+            .nav{
+                box-sizing: border-box;
+                padding: 1rem 0;
+                width: 100%;
+                overflow: hidden;
+                white-space: nowrap;
+                box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
+                background-color: rgb(14, 54, 154);
+                color: white;
+                text-align: center;
+            }
+            .nav .inner{
+                margin: auto;
+            }
+            .title{
+                display: inline-block;
+                margin-left: 10px;
+                margin-right: 10px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-weight: bold;
+                font: 700 18px/32px Roboto,"Helvetica Neue",sans-serif;
+            }
+            .main{
+                margin-top: 1.5rem;
             }
             #moreSounds{
                 padding: 0 0 2.25rem 0;
@@ -75,14 +121,16 @@
                 display: block;
                 position: fixed;
                 bottom:0;
-                height: 80px;
                 margin: 0 -8px;
                 width: 100vw;
-                border-radius: none
+                border-radius: none;
+                cursor: pointer;
+                color: #a32b2b;
+                background-color: #fdbebe;
+                padding: 1.25rem 0;
             }
-            .stop-btn{
-                font-size: 1rem;
-                font-weight: 600;
+            .stop-btn:active{
+                background-color: #fab4b4;
             }
             .stop-btn i{
                 font-size: 2.5rem;
@@ -103,65 +151,72 @@
      
     </head>
     <body>
+            
+        <div class="nav">
+            <div class="inner">
+                <span class="title">AmericanStudies Soundboard</span>
+            </div>
+        </div>
+        
         <center>
-            
-            <img class="logo" src="as_400x400.jpg">
-            
-            <h2 class="title">AmericanStudies Soundboard</h2>
-            
-            <div class="board">
-                <p></p>
-                <button class="btn" onclick="play(1)">Refresh</button>
-                <br>
-                <button class="btn" onclick="play(2)">Rolling</button>
-                <button class="btn" onclick="play(3)">Roll Out</button>
-                <br>
-                <button class="btn" onclick="play(11)">Stand by music</button>
-                <p>Extra</p>
-                <button class="btn" onclick="play(4)">Donald Trump: Wrong</button>
-                <button class="btn" onclick="play(5)">T.M.o.L</button>
-                <button class="btn" onclick="play(6)">We Talkin About Practice</button>
-                <button class="btn" onclick="play(9)">Boom, Roasted</button>
-                <button class="btn" onclick="play(10)">the wooooooorrrrrst</button>
-                <button class="btn" onclick="play(12)">Turn Around</button>
-                <button class="btn" onclick="play(13)">Small Town</button>
-                <button class="btn" onclick="play(14)">Into the NEWS</button>
-                <button class="btn" onclick="play(15)">I don't care</button>
-                <br>
-                <br>
                 
-                <a id="more-link" onclick="moreSounds()">More<i class="material-icons vam"> keyboard_arrow_down</i></a>
-                <div id="moreSounds" style="display: none;">
-                    <button class="btn" onclick="play(7)">Oof</button>
-                    <button class="btn" onclick="play(8)">Bruh</button>
-                    <br><br>
-                    <button class="btn small" onclick="earRapeAll()">Ear rape (ALL)</button>
+            <div class="main">
+
+                <div class="board">
+                    <p></p>
+                    <button class="btn" onclick="play(1)">Refresh</button>
+                    <br>
+                    <button class="btn" onclick="play(2)">Rolling</button>
+                    <button class="btn" onclick="play(3)">Roll Out</button>
+                    <br>
+                    <button class="btn" onclick="play(11)">Stand by music</button>
+                    <p style="color:rgba(0,0,0,0.5);">Extra</p>
+                    <button class="btn" onclick="play(4)">Donald Trump: Wrong</button>
+                    <button class="btn" onclick="play(5)">T.M.o.L</button>
+                    <button class="btn" onclick="play(6)">We Talkin About Practice</button>
+                    <button class="btn" onclick="play(9)">Boom, Roasted</button>
+                    <button class="btn" onclick="play(10)">the wooooooorrrrrst</button>
+                    <button class="btn" onclick="play(12)">Turn Around</button>
+                    <button class="btn" onclick="play(13)">Small Town</button>
+                    <button class="btn" onclick="play(14)">Into the NEWS</button>
+                    <button class="btn" onclick="play(15)">I don't care</button>
+                    <br>
+                    <br>
+
+                    <a id="more-link" onclick="moreSounds()">More<i class="material-icons vam"> keyboard_arrow_down</i></a>
+                    <div id="moreSounds" style="display: none;">
+                        <button class="btn" onclick="play(7)">Oof</button>
+                        <button class="btn" onclick="play(8)">Bruh</button>
+                        <br><br>
+                        <button class="btn small" onclick="earRapeAll()">Ear rape (ALL)</button>
+                    </div>
+
+                </div><!-- / board -->
+
+                <br><br><br><br>
+
+                <div style="display: none; padding: 0 0 5rem 0">
+                    <audio controls id="sound-1" src="sounds/Refresh.mp3"></audio>
+                    <audio controls id="sound-2" src="sounds/Rolling.mp3"></audio>
+                    <audio controls id="sound-3" src="sounds/Roll-Out.mp3"></audio>
+                    <audio controls id="sound-4" src="sounds/Donald-Trump-Wrong.wav"></audio>
+                    <audio controls id="sound-5" src="sounds/T.M.o.L.mp3"></audio>
+                    <audio controls id="sound-6" src="sounds/We-Talkin-About-Practice.mp3"></audio>
+                    <audio controls id="sound-7" src="sounds/OOF.mp3"></audio>
+                    <audio controls id="sound-8" src="sounds/Bruh2.mp3"></audio>
+                    <audio controls id="sound-9" src="sounds/T-O-Boom-Roasted.mp3"></audio>
+                    <audio controls id="sound-10" src="sounds/The-Worst.mp3"></audio>
+                    <audio controls id="sound-11" src="sounds/standby-song.mp3"></audio>
+                    <audio controls id="sound-12" src="sounds/turn-around.mp3"></audio>
+                    <audio controls id="sound-13" src="sounds/small-town.mp3"></audio>
+                    <audio controls id="sound-14" src="sounds/into-the-news.mp3"></audio>
+                    <audio controls id="sound-15" src="sounds/i-dont-care.mp3"></audio>
                 </div>
                 
-            </div><!-- / board -->
-            
-            <br><br><br><br>
-            
-            <div style="display: none; padding: 0 0 5rem 0">
-                <audio controls id="sound-1" src="sounds/Refresh.mp3"></audio>
-                <audio controls id="sound-2" src="sounds/Rolling.mp3"></audio>
-                <audio controls id="sound-3" src="sounds/Roll-Out.mp3"></audio>
-                <audio controls id="sound-4" src="sounds/Donald-Trump-Wrong.wav"></audio>
-                <audio controls id="sound-5" src="sounds/T.M.o.L.mp3"></audio>
-                <audio controls id="sound-6" src="sounds/We-Talkin-About-Practice.mp3"></audio>
-                <audio controls id="sound-7" src="sounds/OOF.mp3"></audio>
-                <audio controls id="sound-8" src="sounds/Bruh2.mp3"></audio>
-                <audio controls id="sound-9" src="sounds/T-O-Boom-Roasted.mp3"></audio>
-                <audio controls id="sound-10" src="sounds/The-Worst.mp3"></audio>
-                <audio controls id="sound-11" src="sounds/standby-song.mp3"></audio>
-                <audio controls id="sound-12" src="sounds/turn-around.mp3"></audio>
-                <audio controls id="sound-13" src="sounds/small-town.mp3"></audio>
-                <audio controls id="sound-14" src="sounds/into-the-news.mp3"></audio>
-                <audio controls id="sound-15" src="sounds/i-dont-care.mp3"></audio>
-            </div>
+            </div><!-- / main -->
             
             <div>
-                <button class="stop-btn" onclick="stopAll()" title="Stop All"><i class="material-icons vam"> stop </i></button>
+                <div class="stop-btn noselect" onclick="stopAll()" title="Stop All"><i class="material-icons vam"> stop </i></div>
             </div>
             
         </center>
