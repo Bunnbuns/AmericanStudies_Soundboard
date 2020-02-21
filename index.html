@@ -39,7 +39,7 @@
         
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         
-    	<style>
+    	<!-- Stored in style tag bc I need to avoid caching --><style>
             *{
                 font-family: IBMPlexSans, Helvetica Neue, Segoe UI, Helvetica, Verdana, Arial, sans-serif;
                 -webkit-font-smoothing: antialiased;
@@ -268,15 +268,21 @@
             
         </center>
         <script>
+            
+            /* when a btn is clicked, this will be called */
             function play(num){
                 id = document.getElementById("sound-"+num);
                 id.load();
                 id.play();
             }
+            
+            /* this will go thru all the sound tags and stop them */
             function stopAll() {
               var sounds = document.getElementsByTagName('audio');
               for(i=0; i<sounds.length; i++) sounds[i].load();
             };
+            
+            /* more sounds dropdown */
             var moreSoundsState = 0;
             function moreSounds(){
                 if(moreSoundsState == 0){
@@ -289,6 +295,8 @@
                     document.getElementById("moreSounds").style.display = "none";
                 }
             }
+            
+            /* ear rape funtion */
             function earRapeAll(){
                 var sounds = document.getElementsByTagName('audio');
                 for(i=0; i<sounds.length; i++){
