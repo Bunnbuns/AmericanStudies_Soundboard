@@ -82,7 +82,7 @@
                 overflow: hidden;
                 white-space: nowrap;
                 box-shadow: 0 2px 4px -1px rgba(0,0,0,.2), 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12);
-                background-color: rgb(14, 54, 154);
+                background-color: rgb(22, 74, 203);
                 color: white;
                 text-align: center;
             }
@@ -136,23 +136,25 @@
                 margin-right: 2px;
                 margin-left: 2px;
                 font-weight: 400;
-                background-color: rgb(65, 90, 190);
+                background-color: rgb(47, 74, 185);
                 box-shadow: none;
                 color: white;
+/*
                 -webkit-transition: all.2s;
                 transition: all .2s;
+*/
+                box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+                transition: background .4s cubic-bezier(.25,.8,.25,1),box-shadow 280ms cubic-bezier(.4,0,.2,1);
             }
             .button:hover{
                 color: white;
-                background-color: rgb(58, 82, 178);
-                -webkit-box-shadow: 0px 0px 3px rgba(61,86,185, 0.35);
-                box-shadow: 0px 0px 3px rgba(61,86,185, 0.35);
+                background-color: rgb(40, 66, 172);
+                box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
             }
             .button:active, .button:focus{
                 color: white;
-                background-color: rgb(42, 62, 142);
-                -webkit-box-shadow: 0px 0px 5px rgba(61,86,185, 0.55);
-                box-shadow: 0px 0px 5px rgba(61,86,185, 0.55);
+                background-color: rgb(26, 50, 149);
+                box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
             }
             .button.small{
                 font-size: 1rem;
@@ -176,7 +178,7 @@
                 color: #a32b2b;
                 background-color: #fdbebe;
                 padding: 1.25rem 0;
-                box-shadow: 0 4px 4px rgba(0,0,0,.45);
+                box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
             }
             .stop-btn:active{
                 background-color: #fab4b4;
